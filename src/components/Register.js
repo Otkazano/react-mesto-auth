@@ -20,7 +20,7 @@ export default function Register ({ onRegister }) {
 
   return (
     <>
-      <Header address={'react-mesto-auth/sign-in'} text={'Войти'} />
+      <Header address={'/react-mesto-auth/sign-in'} text={'Войти'} />
       <main className='content'>
         <form
           action='#'
@@ -65,7 +65,7 @@ export default function Register ({ onRegister }) {
           >
             Зарегистриваться
           </button>
-          <Link to='react-mesto-auth/sign-in' className='form__caption'>
+          <Link to='/react-mesto-auth/sign-in' className='form__caption'>
             Уже зарегистрированы? Войти
           </Link>
         </form>

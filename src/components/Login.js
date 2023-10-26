@@ -19,7 +19,7 @@ export default function Login ({ onLogin }) {
 
   return (
     <>
-      <Header address={'react-mesto-auth/sign-up'} text={'Регистрация'} />
+      <Header address={'/react-mesto-auth/sign-up'} text={'Регистрация'} />
       <main className='content'>
         <form
           action='#'

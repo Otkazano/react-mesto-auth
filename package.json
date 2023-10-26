@@ -1,7 +1,7 @@
 {
   "name": "mesto-react",
   "version": "0.1.0",
-  "homepage": "https://otkazano.github.ioreact-mesto-auth/",
+  "homepage": "https://otkazano.github.io/react-mesto-auth/",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",

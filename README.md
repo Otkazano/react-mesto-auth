@@ -1,5 +1,5 @@
 # Авторизация на реакте в проекте "Место"! 
-[Увидеть проект!](https://otkazano.github.io/react-mesto-auth/)
+[Увидеть проект!](https://otkazano.github.io//react-mesto-auth/)
 -
 ### Технологии в проекте:  
 * продвинутая семантика HTML5
