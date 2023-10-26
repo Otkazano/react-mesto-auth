@@ -2,7 +2,7 @@ import React from 'react'
 import Header from './Header'
 import { Link } from 'react-router-dom'
 
-export default function Register ({ onRegister }) {
+export default function Register ({ onRegister, isLoading }) {
   const [inputData, setInputData] = React.useState({ email: '', password: '' })
 
   function handleChangeEmail (e) {
@@ -63,7 +63,7 @@ export default function Register ({ onRegister }) {
             className='form__btn'
             aria-label='Зарегистриваться'
           >
-            Зарегистриваться
+            {isLoading ? 'Регистрация...' : 'Зарегистриваться'}
           </button>
           <Link to='/react-mesto-auth/sign-in' className='form__caption'>
             Уже зарегистрированы? Войти

@@ -54,6 +54,7 @@ export default function App () {
 
   function handleLogin ({ email, password }) {
     localStorage.setItem('email', email)
+    setIsLoading(true)
     return authApi
       .authorize(email, password)
       .then(res => {
@@ -64,22 +65,24 @@ export default function App () {
           navigate('/react-mesto-auth')
         }
       })
-      .catch(err => {
-        console.log(err)
+      .catch(() => {
         setInfoTooltipIsOpen(true)
         setStatus({
           message: 'Неверный логин или пароль',
           status: false
         })
       })
+      .finally(() => {
+        setIsLoading(false)
+      })
   }
 
   function handleRegister ({ email, password }) {
+    setIsLoading(true)
     return authApi
       .register(email, password)
       .then(() => {
         setStatus({ message: 'Вы успешно зарегистрировались!', status: true })
-        setInfoTooltipIsOpen(true)
         navigate('/react-mesto-auth/sign-in')
       })
       .catch(() => {
@@ -87,7 +90,10 @@ export default function App () {
           message: 'Что-то пошло не так! Попробуйте ещё раз.',
           status: false
         })
+      })
+      .finally(() => {
         setInfoTooltipIsOpen(true)
+        setIsLoading(false)
       })
   }
 
@@ -235,12 +241,14 @@ export default function App () {
         <Routes>
           <Route
             path='/react-mesto-auth/sign-in'
-            element={<Login onLogin={handleLogin} />}
+            element={<Login onLogin={handleLogin} isLoading={isLoading} />}
           />
 
           <Route
             path='/react-mesto-auth/sign-up'
-            element={<Register onRegister={handleRegister} />}
+            element={
+              <Register onRegister={handleRegister} isLoading={isLoading} />
+            }
           />
 
           <Route

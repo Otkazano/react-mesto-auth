@@ -1,7 +1,7 @@
 import React from 'react'
 import Header from './Header'
 
-export default function Login ({ onLogin }) {
+export default function Login ({ onLogin, isLoading }) {
   const [inputData, setInputData] = React.useState({ email: '', password: '' })
 
   function handleChangeEmail (e) {
@@ -62,7 +62,7 @@ export default function Login ({ onLogin }) {
             className='form__btn'
             aria-label='Войти'
           >
-            Войти
+            {isLoading ? 'Вход...' : 'Войти'}
           </button>
         </form>
       </main>
