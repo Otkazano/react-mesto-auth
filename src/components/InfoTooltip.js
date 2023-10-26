@@ -14,9 +14,9 @@ export default function InfoTooltip ({ isOpen, onClose, status }) {
           onClick={onClose}
         />
 
-        {status.status === true && <img src={pictureDone} className='popup__picture' />}
+        {status.status === true && <img src={pictureDone} className='popup__picture' alt='Выполнено'/>}
         {status.status === false && (
-          <img src={pictureError} className='popup__picture' />
+          <img src={pictureError} className='popup__picture'  alt='Ошибка' />
         )}
 
         {status.status === true && (

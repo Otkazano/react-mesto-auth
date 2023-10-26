@@ -1,6 +1,5 @@
 import React from 'react'
 import Header from './Header'
-import { useNavigate } from 'react-router-dom'
 
 export default function Login ({ onLogin }) {
   const [inputData, setInputData] = React.useState({ email: '', password: '' })
@@ -20,7 +19,7 @@ export default function Login ({ onLogin }) {
 
   return (
     <>
-      <Header address={'/mesto-react/sign-up'} text={'Регистрация'} />
+      <Header address={'react-mesto-auth/sign-up'} text={'Регистрация'} />
       <main className='content'>
         <form
           action='#'

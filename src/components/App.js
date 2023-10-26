@@ -45,7 +45,7 @@ export default function App () {
       .then(() => {
         localStorage.setItem('loggedIn', JSON.stringify(true))
         setLoggedIn(true)
-        navigate('/mesto-react')
+        navigate('react-mesto-auth')
       })
       .catch(() => {
         localStorage.setItem('loggedIn', JSON.stringify(false))
@@ -61,7 +61,7 @@ export default function App () {
           setLoggedIn(true)
           localStorage.setItem('jwt', res.token)
           localStorage.setItem('loggedIn', JSON.stringify(true))
-          navigate('/mesto-react')
+          navigate('react-mesto-auth')
         }
       })
       .catch(err => {
@@ -80,7 +80,7 @@ export default function App () {
       .then(() => {
         setStatus({ message: 'Вы успешно зарегистрировались!', status: true })
         setInfoTooltipIsOpen(true)
-        navigate('/mesto-react/sign-in')
+        navigate('react-mesto-auth/sign-in')
       })
       .catch(() => {
         setStatus({
@@ -234,17 +234,17 @@ export default function App () {
       <CurrentUserContext.Provider value={currentUser}>
         <Routes>
           <Route
-            path='/mesto-react/sign-in'
+            path='react-mesto-auth/sign-in'
             element={<Login onLogin={handleLogin} />}
           />
 
           <Route
-            path='/mesto-react/sign-up'
+            path='react-mesto-auth/sign-up'
             element={<Register onRegister={handleRegister} />}
           />
 
           <Route
-            path='/mesto-react'
+            path='react-mesto-auth'
             element={
               <ProtectedRoute loggedIn={loggedIn}>
                 <Main
@@ -266,9 +266,9 @@ export default function App () {
             path='*'
             element={
               loggedIn ? (
-                <Navigate to='/mesto-react' />
+                <Navigate to='react-mesto-auth' />
               ) : (
-                <Navigate to='/mesto-react/sign-in' />
+                <Navigate to='react-mesto-auth/sign-in' />
               )
             }
           />
