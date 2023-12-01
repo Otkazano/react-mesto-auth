@@ -1,6 +1,6 @@
 .header__text-link {
   text-decoration: none;
-  color: #A9A9A9;
+  color: #a9a9a9;
   font-size: 18px;
   font-style: normal;
   font-weight: 400;
@@ -12,4 +12,11 @@
 .header__text-link:hover {
   opacity: 0.6;
   cursor: pointer;
+}
+
+@media (max-width: 900px) {
+  .header__text-link {
+    font-size: 14px;
+    margin-right: 34px;
+  }
 }

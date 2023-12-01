@@ -61,9 +61,9 @@ export default function Register ({ onRegister, isLoading }) {
             type='submit'
             form={'registerForm'}
             className='form__btn'
-            aria-label='Зарегистриваться'
+            aria-label='Зарегистрироваться'
           >
-            {isLoading ? 'Регистрация...' : 'Зарегистриваться'}
+            {isLoading ? 'Регистрация...' : 'Зарегистрироваться'}
           </button>
           <Link to='/react-mesto-auth/sign-in' className='form__caption'>
             Уже зарегистрированы? Войти
